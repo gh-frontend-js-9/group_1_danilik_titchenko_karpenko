@@ -1,6 +1,11 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers, compose } from 'redux';
+
+declare global {
+    interface Window {
+      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const appReducer = combineReducers({
     // reducers list
@@ -12,5 +17,5 @@ export const rootReducer = (state: any, action: any) => {
 
 export const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    composeEnhancers()
 );
