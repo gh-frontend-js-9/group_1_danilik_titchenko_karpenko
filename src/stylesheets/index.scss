@@ -1,0 +1,11 @@
+/* Fonts */
+@font-face {
+    font-family: "Pitcher Regular";
+    src: url("../../public/fonts/pitcher/PitcherRegular.ttf");
+}
+
+/* Normilizer */
+@import "../../node_modules/normalize-scss/sass/normalize";
+
+/* Univeraal templates */
+@import "./universal_templates/buttons.scss";
