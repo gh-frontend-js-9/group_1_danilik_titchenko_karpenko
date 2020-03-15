@@ -8,14 +8,23 @@
 	border-radius: 50%;
 	margin: 0.5rem;
 	background: transparent;
-	
+}
+@mixin logo_general {
+	font-family: "Pitcher Regular";
+	font-size: 2rem;
+	text-decoration: none;
+	font-weight: bold;
 }
 .button {
 	&_logo {
-		font-family: "Pitcher Regular";
-		font-size: 2rem;
-		text-decoration: none;
-		font-weight: bold;
+		&-gray {
+			color: $text-gray;
+			@include logo_general;
+		}
+		&-main {
+			color: #ffffff;
+			@include logo_general;
+		}
 	}
 	&_social {
 		&-gray {
@@ -25,7 +34,6 @@
 		&-white {
 			color: #ffffff;
 			@include button_social();
-			
 		}
 		@include button-hover();
 	}

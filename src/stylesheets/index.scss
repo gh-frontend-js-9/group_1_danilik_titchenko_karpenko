@@ -4,6 +4,9 @@
     src: url("../assets/fonts/pitcher/PitcherRegular.ttf");
 }
 
+/* Variables */
+@import "./variables.scss";
+
 /* Normalizer */
 @import "../../node_modules/normalize-scss/sass/normalize";
 
