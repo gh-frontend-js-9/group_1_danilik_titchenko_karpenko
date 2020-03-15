@@ -1,29 +1,46 @@
 import React from 'react';
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
-import { faAd } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { Link } from 'react-router-dom';
 // https://www.npmjs.com/package/@fortawesome/react-fontawesome
 
 export type SocialIconProps = {
     background?: string,
-    icon: FontAwesomeIconProps,
-    ulr?: string
+    icon: IconProp,
+    href?: string
+    ulr?: string,
+    className?: string
 }
 
 const defaultValue: {
     background: string,
-    url: string
+    url: string,
+    href: string
 } = {
-    background: "transparent",
-    url: "#"
+    background: "",
+    url: "#",
+    href: "#"
 }
 
-export function SocialIcon(props: SocialIconProps) {
+export function SocialIconGray(props: SocialIconProps) {
     return (
-        <button
-            onClick={() => window.open(props.ulr || defaultValue.url)}
+        <Link
+            to={props.href || defaultValue.href}
             style={{ background: props.background || defaultValue.background }}
+           
         >
-            <FontAwesomeIcon icon={props.icon}></FontAwesomeIcon>
-        </button>
+            <FontAwesomeIcon className = { props.className || "button_social-gray" } icon={props.icon}></FontAwesomeIcon>
+        </Link>
+    )
+}
+export function SocialIconWhite(props: SocialIconProps) {
+    return (
+        <Link
+            to={props.href || defaultValue.href}
+            style={{ background: props.background || defaultValue.background }}
+           
+        >
+            <FontAwesomeIcon className = { props.className || "button_social-white" } icon={props.icon}></FontAwesomeIcon>
+        </Link>
     )
 }
