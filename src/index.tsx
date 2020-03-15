@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Navigation from './navigation/index';
 import * as serviceWorker from './serviceWorker';
 
 // Redux
@@ -9,7 +9,7 @@ import { store } from './redux/reducers';
 
 ReactDOM.render(
     <Provider store = { store }>
-        <App />
+        <Navigation/>
     </Provider>
     , document.getElementById('root')
 );
