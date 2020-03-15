@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Navigation from './navigation/index';
 import * as serviceWorker from './serviceWorker';
+import "./stylesheets/index.scss";
 
 // Redux
 import { Provider } from 'react-redux';
 import { store } from './redux/reducers';
 
 ReactDOM.render(
-    <Provider store = { store }>
-        <Navigation/>
-    </Provider>
-    , document.getElementById('root')
+    <Provider store={store}>
+        <Navigation />
+    </Provider>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
