@@ -1,14 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// font: size family, default font
+const defaultValue: {
+    size: string,
+    color: string
+} = {
+    size: "2rem",
+    color: "black"
+}
 
 export type SiteLogoProps = {
-    size: string
+    size?: string,
+    color?: string
 }
 
 export default function SiteLogo(props: SiteLogoProps) {
     return (
-        <Link style={{ fontSize: props.size }} to="/">Bahram</Link>
+        <Link
+            className="button_logo"
+            style={{
+                fontSize: props.size || defaultValue.size,
+                color: props.color || defaultValue.color
+            }}
+            to="/">Bahram
+        </Link>
     )
 }
