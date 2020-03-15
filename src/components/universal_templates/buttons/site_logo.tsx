@@ -5,7 +5,7 @@ const defaultValue: {
     size: string,
     color: string
 } = {
-    size: "2rem",
+    size: "",
     color: "black"
 }
 
