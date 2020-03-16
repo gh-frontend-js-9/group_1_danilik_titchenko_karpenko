@@ -5,7 +5,8 @@ export type IconPropsType  ={
     icon: IconProp,
     color?: string,
     background?: string,
-    className?: string
+    className?: string,
+    size?: string
 }
 
 export interface ActionItemInterface extends IconPropsType {

@@ -9,7 +9,8 @@ export default function Icon(props: IconPropsType) {
             className={props.className || ""}
             style={{
                 color: props.color || "",
-                background: props.background || ""
+                background: props.background || "",
+                fontSize: props.size || ""
             }}
         />
     )
