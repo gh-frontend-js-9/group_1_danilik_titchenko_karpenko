@@ -1,24 +1,25 @@
 import React from 'react';
-import { class_center } from './partials';
+import { class_center } from './constants';
 
-type CardPropsType = {
+export type CardPropsType = {
     children: any,
     className?: string | undefined,
     style?: React.CSSProperties,
-    center?: boolean
+    center?: boolean,
+    id?: string
 }
 
-export function Card(props: CardPropsType) {
+export default function Card(props: CardPropsType) {
     let class_name_center: string = props.center ? class_center : "";
     return (
         <div
             className={
-                props.className?
+                props.className ?
                     `${props.className} ${class_name_center} card` : `${class_name_center} card`
-                }
+            }
             style={props.style}
         >
-            {props.children }
+            {props.children}
         </div>
     )
 }
