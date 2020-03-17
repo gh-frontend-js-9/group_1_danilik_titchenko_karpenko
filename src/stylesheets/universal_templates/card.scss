@@ -4,27 +4,36 @@
 	text-align: left;
 }
 @mixin card_main {
-	padding: 1rem;
-	border-radius: .5rem;
+	$margin: 0.75rem;
+
+	padding: 2rem;
+	margin: $margin $margin 0 0;
+	border-radius: 0.5rem;
+	&:nth-child(even) {
+		margin: $margin 0 0 0;
+	}
 }
 @mixin box-shadow {
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
 }
 
-.center{
-    &-horizontal{
-        margin: 0 auto .5rem auto;
-        text-align: center;
-    }
-    &-vertical{
-        margin: auto 1rem;
-    }
+.center {
+	&-horizontal {
+		margin: 0 auto 0.5rem auto;
+		text-align: center;
+	}
+	&-vertical {
+		margin: auto 0;
+	}
 }
 
 .card {
-    
-    @include card_main;
-    
+	@include card_main;
+	&_bg {
+		&-blue {
+			background: $bg-blue;
+		}
+	}
 	&_shadow {
 		@include box-shadow;
 	}
@@ -45,17 +54,45 @@
 	}
 	&__wrapper {
 		@include card_main;
-        @include card_general;
-        display: block;
+		@include card_general;
+		display: block;
+		// margin: 1rem;
 	}
 	&__image {
-        display: block;
-        max-width: fit-content;
-        
-        &_tag{
-            @include box-shadow;
-            width: 100%;
-            border-radius: .5rem;
-        }
-    }
+		display: block;
+		max-width: fit-content;
+
+		&_tag {
+			@include box-shadow;
+			width: 100%;
+			border-radius: 0.5rem;
+		}
+	}
+	&__title {
+		font-size: $font-size-large;
+		font-weight: bold;
+		margin: 1rem 0;
+		@include card_general;
+	}
+	&__grid-wrapper {
+		display: grid;
+		&_two {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&_four {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+	}
+	&__flex-wrapper {
+		display: flex;
+		&_row {
+			justify-content: space-between;
+			flex-flow: row wrap;
+		}
+		&_column {
+			justify-content: space-around;
+			flex-flow: column wrap;
+		}
+	}
 }
