@@ -1,21 +1,11 @@
 import React from 'react';
-
-export const class_center: string = "center-horizontal";
-type CardComponentPropsType = {
-    className?: string,
-    style?: React.CSSProperties,
-    children?: string | any
-    center?: boolean
-}
-interface ImageComponentPropsType extends CardComponentPropsType {
-    src: string,
-    alt: string
-}
+import { class_center } from './constants';
+import { CardComponentPropsType, ImageComponentPropsType } from './types';
 
 export function Author(props: CardComponentPropsType) {
     let class_name_center: string = props.center ? class_center : "";
     return (
-        <p
+        <div
             style={props.style}
             className=
             {
@@ -24,7 +14,7 @@ export function Author(props: CardComponentPropsType) {
                     `${class_name_center} card__author`
             }>
             {props.children}
-        </p>
+        </div>
     )
 }
 
@@ -71,8 +61,46 @@ export function Image(props: ImageComponentPropsType) {
             <img
                 src={props.src}
                 alt={props.alt}
-                className = "card__image_tag"
+                className="card__image_tag"
             />
+        </div>
+    )
+}
+
+export function Title(props: CardComponentPropsType) {
+    let class_name_center: string = props.center ? class_center : "";
+    return (
+        <div
+            className={
+                props.className ?
+                    `${props.className} ${class_name_center} card__title` :
+                    `${class_name_center} card__title`}
+            style={props.style}>
+            {props.children}
+        </div>
+    )
+}
+
+export function Wrapper(props: CardComponentPropsType) {
+    let class_name_center: string = props.center ? class_center : "";
+    return (
+        <article
+            className={
+                props.className ?
+                    `${props.className} ${class_name_center} card__grid-wrapper` :
+                    `${class_name_center} card__grid-wrapper`}>
+            {props.children}
+        </article>
+    )
+}
+
+export function ListWrapper(props: {
+    id?: string,
+    children: any
+}) {
+    return (
+        <div key={props.id}>
+            {props.children}
         </div>
     )
 }
