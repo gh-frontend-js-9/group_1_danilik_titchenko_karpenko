@@ -6,9 +6,11 @@
 
 /* Variables */
 @import "./variables.scss";
+@import "./reset.scss";
 
 /* Normalizer */
 @import "../../node_modules/normalize-scss/sass/normalize";
 
 /* Universal templates */
 @import "./universal_templates/button.scss";
+@import "./universal_templates/card.scss";
