@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Author, Body, Title, Wrapper, ListWrapper } from '../../universal_templates/cards/partials';
-import BlogWrapper, { } from '../../universal_templates/blocks/block';
+import BlockWrapper, { } from '../../universal_templates/blocks/block';
 import Card from '../../universal_templates/cards';
 import ButtonLink from '../../universal_templates/buttons/link';
 import { ArticleBlock } from './types';
@@ -12,7 +12,7 @@ type _ArticleBlockType = {
 
 export default function (props: _ArticleBlockType) {
     return (
-        <BlogWrapper key="Blog">
+        <BlockWrapper key="Blog">
             {
                 props.data.map((value: ArticleBlock) => {
                     return (
@@ -40,6 +40,6 @@ export default function (props: _ArticleBlockType) {
                     )
                 })
             }
-        </BlogWrapper>
+        </BlockWrapper>
     )
 }
