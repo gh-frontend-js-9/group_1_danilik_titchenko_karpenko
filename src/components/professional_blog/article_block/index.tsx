@@ -12,7 +12,7 @@ type _ArticleBlockType = {
 
 export default function (props: _ArticleBlockType) {
     return (
-        <BlockWrapper key="Blog">
+        <BlockWrapper>
             {
                 props.data.map((value: ArticleBlock) => {
                     return (
