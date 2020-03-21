@@ -1,13 +1,11 @@
 import React from 'react';
 
 export default function (props: {
-    children?: Array<any>
+    children?: any
 }) {
     return (
-        <section className="block__wrapper">
-            {props.children?.map((value, index: number) => {
-                return <article key={index} className="block__element">{value}</article>
-            })}
+        <section className="block__element_indent">
+            { props.children }
         </section>
     )
 }
