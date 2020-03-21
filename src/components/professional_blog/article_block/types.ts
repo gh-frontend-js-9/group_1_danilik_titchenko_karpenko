@@ -1,19 +1,21 @@
-export type ArticleBlock = {
-    _id: string,
-    title: string,
-    card: ArticleBlockType
-}
-export type SmallArticlesType = {
-    title: string,
-    text: string,
-    _id: string
+export type PostType = {
+    docs: Array<PostDocsType>,
+    total: number,
+    limit: number,
+    page: number,
+    pages: number
 }
 
-type ArticleBlockType = {
-    main: {
-        title: string,
-        author: string,
-        text: string
-    },
-    small: Array<SmallArticlesType>
+export type PostDocsType = {
+    description: string,
+    featuredImage: string,
+    category: Array<string>,
+    tags: Array<string>,
+    likesCount: number,
+    viewsCount: number,
+    _id: string,
+    title: string,
+    content: string,
+    author: string,
+    slug: string
 }
