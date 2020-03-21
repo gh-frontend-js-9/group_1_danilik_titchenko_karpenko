@@ -61,6 +61,9 @@
 	&__image {
 		display: block;
 		max-width: fit-content;
+		-webkit-box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.75);
+		box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.75);
 
 		&_tag {
 			@include box-shadow;
@@ -78,10 +81,17 @@
 		display: grid;
 		&_two {
 			grid-template-columns: repeat(2, 1fr);
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
+			}
 		}
 		&_four {
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			grid-template-rows: auto;
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
+			}
+			// grid-template-rows: repeat(2, 1fr);
 		}
 	}
 	&__flex-wrapper {
