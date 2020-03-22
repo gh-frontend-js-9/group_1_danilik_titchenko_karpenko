@@ -1,0 +1,18 @@
+.text{
+    &_color{
+        &-gray{
+            color: $text-gray;
+        }
+        &-white{
+            color: white;
+        }
+        &-black{
+            color: black;
+        }
+    }
+    &_font{
+        &-{
+            font-family: "Open Sans Semi Bold";
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.block {
+	&__element {
+		$margin: 10rem;
+		&:first-child {
+			margin: 0 auto $margin auto;
+		}
+		&:last-child {
+            margin: 0 auto;
+        }
+        // default
+        margin: $margin auto $margin auto;
+    }
+    &__wrapper{
+        width: 80%;
+        margin: auto;
+    }
+}

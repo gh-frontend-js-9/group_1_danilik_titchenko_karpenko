@@ -16,6 +16,22 @@
 	font-weight: bold;
 }
 .button {
+	&_element{
+		font-size: $font-size-base;
+		&_color{
+			&-gray{
+				color: $text-gray;
+			}
+			&-black{
+				color: inherit;
+			}
+		}
+		text-decoration: none;
+		&_hover{
+			@include button-hover;
+			cursor: pointer;
+		}
+	}
 	&_logo {
 		&-gray {
 			color: $text-gray;
@@ -29,12 +45,12 @@
 	&_social {
 		&-gray {
 			color: #9b9b9b;
-			@include button_social();
+			@include button_social;
 		}
 		&-white {
 			color: #ffffff;
-			@include button_social();
+			@include button_social;
 		}
-		@include button-hover();
+		@include button-hover;
 	}
 }
