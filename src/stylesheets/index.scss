@@ -9,11 +9,17 @@
 @import "./variables.scss";
 @import "./reset.scss";
 
-/* Normalizer */
-@import "../../node_modules/normalize-scss/sass/normalize";
-
 /* Universal templates */
 @import "./universal_templates/button.scss";
 @import "./universal_templates/card.scss";
 @import "./universal_templates/text.scss";
 @import "./universal_templates/block.scss";
+@import "./universal_templates/preloader.scss";
+@import "./universal_templates/carousel.scss";
+@import "./universal_templates/general.scss";
+
+/* Media */
+@import "./media/576.scss";
+@import "./media/768.scss";
+@import "./media/992.scss";
+@import "./media/1200.scss";
