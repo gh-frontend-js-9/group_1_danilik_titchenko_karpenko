@@ -6,11 +6,7 @@
 @mixin button_social {
 	@include button_hover;
 	border-radius: 50%;
-<<<<<<< HEAD
-	margin: 0.3rem;
-=======
 	margin: 8px;
->>>>>>> fcf06194faf1b3ccd83d94cde3eb155413a2c0da
 	background: transparent;
 }
 @mixin logo_general {

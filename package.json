@@ -17,10 +17,7 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "node-sass": "^4.13.1",
-<<<<<<< HEAD
     "normalize-scss": "^7.0.1",
-=======
->>>>>>> fcf06194faf1b3ccd83d94cde3eb155413a2c0da
     "normalize.css": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
