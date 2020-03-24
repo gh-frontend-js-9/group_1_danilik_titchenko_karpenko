@@ -26,9 +26,10 @@
 		margin: $margin 0 0 $margin;
 	}
 	@media (max-width: 768px) {
-		margin: $margin auto;
+		margin: $margin auto !important;
 	}
 }
+
 @mixin box-shadow {
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
@@ -45,7 +46,7 @@
 
 .card {
 	&_header-carousel{
-		margin: 0 !important;
+		margin: 0;
 		padding: 15rem 0;
 		border-radius: 0;
 	}
@@ -99,7 +100,6 @@
 	&__title {
 		font-size: $font-size-large;
 		font-weight: bold;
-		margin: auto 0;
 		@include card_general;
 	}
 	&__grid-wrapper {

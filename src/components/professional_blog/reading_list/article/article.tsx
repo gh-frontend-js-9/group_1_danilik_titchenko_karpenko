@@ -9,7 +9,7 @@ export default function (props: {
     limit: number
 }) {
     return (
-        <BlockWrapper indent>
+        <BlockWrapper className = "block__element_indent-bottom">
             <Wrapper className="card__grid-wrapper_two">
                 {
                     props.data.docs.map((article, index) => {
