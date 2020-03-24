@@ -1,12 +1,12 @@
 .block {
 	&__element {
-		$margin: 10rem;
+		$margin: 160px;
         &_indent{
             &:first-child {
                 margin: 0 auto $margin auto;
             }
             &:last-child {
-                margin: 0 auto;
+                margin: $margin auto 0 auto;
             }
             // default
             margin: $margin auto $margin auto;
