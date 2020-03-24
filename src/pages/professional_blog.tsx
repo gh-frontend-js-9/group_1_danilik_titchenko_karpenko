@@ -13,7 +13,7 @@ export default function () {
                 <Header />
                 <HeaderCarousel />
             </Section>
-            <Section className = "block__body">
+            <Section className="block__body">
                 <ArticleBlock />
                 <ArticleImageBlock />
             </Section>
