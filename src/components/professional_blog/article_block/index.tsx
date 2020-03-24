@@ -1,47 +1,14 @@
-import React, { Component } from 'react';
-import ArticleCard from './article';
-import { PostDocsType, PostType } from './types';
+import React from 'react';
+import Section from '../../universal_templates/blocks/section';
+import {ArticleBlock} from '../../../components/professional_blog/article_block/article_section';
+import { ArticlesCategory } from '../../../components/utils/api_utils/articles';
 
-import { get_articles } from '../../utils/api_utils/articles';
-
-export type ArticleType = {
-    data: PostType
-}
-
-export class Popular extends Component<{}, ArticleType>{
-    constructor(props: {}) {
-        super(props);
-        this.state = {
-            data: {
-                docs: [],
-                limit: 0,
-                page: 0,
-                pages: 0,
-                total: 0
-            }
-        }
-        this.getPopularArticles();
-    }
-
-    getPopularArticles() {
-        get_articles().then((articles) => {
-            if (articles) this.setState({
-                data: articles.data
-            })
-        })
-    }
-
-    render() {
-        const { data } = this.state;
-        if (data) {
-            return [
-                <ArticleCard data={data}></ArticleCard>,
-                <ArticleCard data={data}></ArticleCard>
-            ]
-        } else {
-            return (
-                <div></div>
-            )
-        }
-    }
+export default function () {
+    return (
+        <Section>
+            <ArticleBlock category={ArticlesCategory.POPULAR}></ArticleBlock>
+            <ArticleBlock category={ArticlesCategory.ESSENTIALS}></ArticleBlock>
+            <ArticleBlock category={ArticlesCategory.FREELANCE}></ArticleBlock>
+        </Section>
+    )
 }

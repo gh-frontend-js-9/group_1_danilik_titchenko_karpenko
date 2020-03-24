@@ -1,8 +1,8 @@
 import React from 'react';
-import { Header, Author, Body, Title, Wrapper, ListWrapper, Image } from '../../universal_templates/cards/partials';
-import BlockWrapper, { } from '../../universal_templates/blocks/block';
+import { Header, Author, Body, Title, Wrapper, ListWrapper } from '../../universal_templates/cards/partials';
+import BlockWrapper from '../../universal_templates/blocks/section';
 import Card from '../../universal_templates/cards';
-import ButtonLink from '../../universal_templates/buttons/link';
+import ViewAllButton from './view_all_button';
 import { PostDocsType, PostType } from './types';
 import { Link } from 'react-router-dom';
 
@@ -13,20 +13,19 @@ export default function (props: {
         return a.likesCount + b.likesCount
     })
     return (
-        <BlockWrapper>
+        <BlockWrapper indent>
             {
                 props.data.docs.map((article, index) => {
                     if (index === 0) {
                         return (
-                            <Wrapper className="card__flex-wrapper_row card__flex-wrapper">
+                            <Wrapper key={index} className="card__flex-wrapper_row card__flex-wrapper">
                                 <Title>{article.category[0]}</Title>
-                                <ButtonLink
-                                    href="#"
-                                    className="button_element button_element_color-gray button_element_hover">
-                                    View All
-                                </ButtonLink>
+                                <ViewAllButton href = "#"/>
                             </Wrapper>
                         )
+                    }
+                    else {
+                        return null
                     }
                 })
             }
@@ -35,9 +34,8 @@ export default function (props: {
                     props.data.docs.map((article, index) => {
                         if (index === 0) {
                             return (
-                                <Card className="card_shadow card_bg-blue card__flex-wrapper_column card__flex-wrapper text_color-white">
+                                <Card key={index} className="card_shadow card_bg-blue card__flex-wrapper_column card__flex-wrapper_column-around card__flex-wrapper text_color-white">
                                     <ListWrapper key={article._id}>
-                                        <Image src={article.featuredImage} alt={article.slug}></Image>
                                         <Author>By {article.author} in {article.tags[0]}</Author>
                                         <Title>{article.title}</Title>
                                         <Body>{article.description}</Body>
@@ -45,27 +43,34 @@ export default function (props: {
                                 </Card>
                             )
                         }
+                        else {
+                            return null
+                        }
                     })
                 }
                 <Wrapper className="card__grid-wrapper_four">
                     {
                         props.data.docs.map((article, index) => {
-                            return (
-                                <Wrapper >
-                                    <ListWrapper key={article._id}>
-                                        <Card className="card_shadow">
-                                            <Header>
-                                                <Link
-                                                    to="#"
-                                                    className="button_element button_element_color-gray">
-                                                    {article.tags[0]}
-                                                </Link>
-                                            </Header>
-                                            <Body className="button_element button_element_color-black button_element_hover">{article.description}</Body>
-                                        </Card>
-                                    </ListWrapper>
-                                </Wrapper>
-                            )
+                            if (index > 0) {
+                                return (
+                                    <Wrapper key={index}>
+                                        <ListWrapper key={article._id}>
+                                            <Card className="card_shadow">
+                                                <Header>
+                                                    <Link
+                                                        to="#"
+                                                        className="button_element button_element_color-gray">
+                                                        {article.tags[0]}
+                                                    </Link>
+                                                </Header>
+                                                <Body className="button_element button_element_color-black button_element_hover">{article.description}</Body>
+                                            </Card>
+                                        </ListWrapper>
+                                    </Wrapper>
+                                )
+                            } else {
+                                return null
+                            }
                         })
                     }
                 </Wrapper>
