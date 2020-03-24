@@ -44,6 +44,11 @@
 }
 
 .card {
+	&_header-carousel{
+		margin: 0 !important;
+		padding: 15rem 0;
+		border-radius: 0;
+	}
 	@include card_main;
 	&_bg {
 		&-blue {

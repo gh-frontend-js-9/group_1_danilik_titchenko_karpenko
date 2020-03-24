@@ -1,19 +1,26 @@
 .block {
 	&__element {
 		$margin: 160px;
-        &_indent{
-            &:first-child {
-                margin: 0 auto $margin auto;
-            }
-            &:last-child {
-                margin: $margin auto 0 auto;
-            }
-            // default
-            margin: $margin auto $margin auto;
-        }
-    }
-    &__wrapper{
-        width: 100%;
-        margin: auto;
-    }
+		&_indent {
+			&:first-child {
+				margin: 0 auto $margin auto;
+			}
+			&:last-child {
+				margin: $margin auto 0 auto;
+			}
+			// default
+			margin: $margin auto $margin auto;
+			&-dual {
+				margin: $margin auto;
+			}
+		}
+	}
+	&__wrapper {
+		width: 100%;
+		margin: auto;
+	}
+	&__header_wrapper{
+		padding: 0 20%;
+		background: $bg-blue;
+	}
 }
