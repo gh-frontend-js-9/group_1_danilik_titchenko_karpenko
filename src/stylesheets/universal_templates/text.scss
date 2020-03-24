@@ -11,8 +11,28 @@
         }
     }
     &_font{
-        &-{
+        &-default{
             font-family: "Open Sans Semi Bold";
+        }
+    }
+    &_align{
+        &-center{
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    &_size{
+        &-base{
+            font-size: $font-size-base;
+        }
+        &-subheader{
+            font-size: $font-size-subheader;
+        }
+        &-header{
+            font-size: $font-size-header;
+        }
+        &-large{
+            font-size: $font-size-large;
         }
     }
 }

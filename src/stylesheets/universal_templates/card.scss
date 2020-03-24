@@ -1,25 +1,41 @@
 @mixin card_general {
-	letter-spacing: 0.01rem;
+	letter-spacing: 0.16px;
 	line-height: 1.5;
 	text-align: left;
+	&:first-child{
+		margin: auto 0 0 0;
+	}
+	&:last-child{
+		margin: 0;
+	}
+	margin: auto 0;
 }
 @mixin card_main {
-	$margin: 0.75rem;
+	$margin: 12px;
 
-	padding: 2rem;
+	padding: 32px;
 	margin: $margin $margin 0 0;
-	border-radius: 0.5rem;
+	border-radius: 8px;
 	&:nth-child(even) {
 		margin: $margin 0 0 0;
 	}
+	&:first-child{
+		margin: $margin 0 0 0;
+	}
+	&:last-child{
+		margin: $margin 0 0 $margin;
+	}
+	@media (max-width: 768px) {
+		margin: $margin auto;
+	}
 }
 @mixin box-shadow {
-	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .center {
 	&-horizontal {
-		margin: 0 auto 0.5rem auto;
+		margin: 0 auto 8px auto;
 		text-align: center;
 	}
 	&-vertical {
@@ -28,6 +44,11 @@
 }
 
 .card {
+	&_header-carousel{
+		margin: 0 !important;
+		padding: 15rem 0;
+		border-radius: 0;
+	}
 	@include card_main;
 	&_bg {
 		&-blue {
@@ -45,7 +66,7 @@
 	}
 	&__author {
 		text-transform: uppercase;
-		font-size: $font-size-base;
+		font-size: $font-size-subheader;
 		@include card_general;
 	}
 	&__body {
@@ -56,32 +77,46 @@
 		@include card_main;
 		@include card_general;
 		display: block;
-		// margin: 1rem;
 	}
 	&__image {
-		display: block;
-		max-width: fit-content;
+		$border-radius: 8px;
 
+		position: relative;
+		display: block;
+		border-radius: $border-radius;
+		background: transparent;
+		width: fit-content;
+		-webkit-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
+		box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
 		&_tag {
 			@include box-shadow;
+			background: transparent;
 			width: 100%;
-			border-radius: 0.5rem;
+			border-radius: $border-radius;
 		}
 	}
 	&__title {
 		font-size: $font-size-large;
 		font-weight: bold;
-		margin: 1rem 0;
+		margin: auto 0;
 		@include card_general;
 	}
 	&__grid-wrapper {
 		display: grid;
 		&_two {
 			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: auto;
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
+			}
 		}
 		&_four {
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			grid-template-rows: auto;
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
+			}
 		}
 	}
 	&__flex-wrapper {
@@ -91,8 +126,10 @@
 			flex-flow: row wrap;
 		}
 		&_column {
-			justify-content: space-around;
 			flex-flow: column wrap;
+			&-around {
+				justify-content: space-around;
+			}
 		}
 	}
 }
