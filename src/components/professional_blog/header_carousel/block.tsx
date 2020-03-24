@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-import ArticleCard from './article';
-import { PostType } from './types';
+
+import { PostType } from '../article_block/types';
 import { get_articles_proffessional_blog, ArticlesCategory } from '../../utils/api_utils/articles';
+import { PopularCard } from '../article_block/partials';
+import { ArticlePropsType, ArticleType } from '../article_block/article_section';
 
-export type ArticleType = {
-    data: PostType
-}
-
-export type ArticlePropsType = {
-    category: ArticlesCategory
-}
 
 export const defaultStateValue: PostType = {
     docs: [],
@@ -19,13 +14,13 @@ export const defaultStateValue: PostType = {
     total: 0
 }
 
-export class ArticleBlock extends Component<ArticlePropsType, ArticleType>{
-    constructor(props: ArticlePropsType) {
+export default class ArticleBlock extends Component<ArticlePropsType,ArticleType>{
+    constructor(props: any) {
         super(props);
         this.state = {
             data: defaultStateValue
         }
-        this.getArticles(props.category);
+        this.getArticles(ArticlesCategory.ESSENTIALS);
     }
 
 
@@ -43,7 +38,7 @@ export class ArticleBlock extends Component<ArticlePropsType, ArticleType>{
         const { data } = this.state;
         if (data) {
             return (
-                <ArticleCard data={data}></ArticleCard>
+                <PopularCard className = "card_header-carousel" data = {data}/>
             )
         } else {
             return (

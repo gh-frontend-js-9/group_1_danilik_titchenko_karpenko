@@ -5,6 +5,20 @@ import { defaultStateValue } from '../../article_block/article_section';
 import ArticleLayoutPhoto from './article';
 import { randomInteger } from '../../../utils/number';
 
+export function randomCategory():ArticlesCategory{
+    let random_number:number = randomInteger(0, Object.keys(ArticlesCategory).length/3);
+    switch(random_number){
+        case 0:
+            return ArticlesCategory.FREELANCE;
+        case 1:
+            return ArticlesCategory.ESSENTIALS;
+        case 2:
+            return ArticlesCategory.POPULAR
+        default:
+            return ArticlesCategory.FREELANCE
+    }
+}
+
 export default class extends Component<{}, {
     data: PostType
 }> {
@@ -14,22 +28,10 @@ export default class extends Component<{}, {
         this.state = {
             data: defaultStateValue
         };
-        this.getArticles(this.randomCategory());
+        this.getArticles(randomCategory());
     }
 
-    randomCategory():ArticlesCategory{
-        let random_number:number = randomInteger(0, Object.keys(ArticlesCategory).length/3);
-        switch(random_number){
-            case 0:
-                return ArticlesCategory.FREELANCE;
-            case 1:
-                return ArticlesCategory.ESSENTIALS;
-            case 2:
-                return ArticlesCategory.POPULAR
-            default:
-                return ArticlesCategory.FREELANCE
-        }
-    }
+
 
     getArticles(category: ArticlesCategory) {
         get_articles_proffessional_blog(category).then((articles) => {
