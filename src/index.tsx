@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Navigation from './navigation/index';
 import * as serviceWorker from './serviceWorker';
 import "normalize.css";
-// import "./stylesheets/index.scss";
+import "./stylesheets/index.scss";
 
 // Redux
 import { Provider } from 'react-redux';
