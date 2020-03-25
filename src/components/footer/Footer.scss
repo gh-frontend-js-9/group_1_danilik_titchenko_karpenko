@@ -2,12 +2,8 @@
     background-color: whitesmoke;
     display: flex;
     justify-content: space-around;
-    flex-flow: row wrap;
     align-items: center;
     padding: 45px 0;
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
 }
 
 .footer-copyright {

@@ -21,9 +21,6 @@
 	&__wrapper {
 		width: 100%;
 		margin: auto;
-		@media (max-width: 768px) {
-			padding: 2%;
-		}
 	}
 	&__header_wrapper{
 		padding: 0 $header-body-indent;
@@ -32,8 +29,5 @@
 	&__body{
 		padding: 0 $header-body-indent;
 		background: $bg-gray;
-		@media (max-width: 768px) {
-			padding: 0 1%;
-		}	
 	}
 }
