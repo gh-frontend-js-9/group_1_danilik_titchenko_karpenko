@@ -10,8 +10,8 @@ export default function () {
     return (
         <>
             <Section>
-                <Header />
-                <HeaderCarousel />
+                <Header></Header>
+                <HeaderCarousel/>
             </Section>
             <Section className = "block__body">
                 <ArticleBlock />

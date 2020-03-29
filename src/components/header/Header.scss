@@ -3,7 +3,7 @@
 @import "../../stylesheets/media/768px/768.scss";
 
 .header {
-    //background-color: $bg-blue; //Optional style. You must delete when you want to deploy on server
+    background-color: $bg-blue; //Optional style. You must delete when you want to deploy on server
     padding: 0 0 0 $header-body-indent;
     display: flex;
     flex-flow: row wrap;
@@ -25,39 +25,39 @@
 }
 
 /*style Titchenko*/
-.header{
-    background-color: #f9f9fb;
-    padding: 60px 0px 60px 0px;
-}
-.header-wrap{
-    margin: 0 auto;
-    display: inline-flex;
+// .header{
+//     background-color: #f9f9fb;
+//     padding: 60px 0px 60px 0px;
+// }
+// .header-wrap{
+//     margin: 0 auto;
+//     display: inline-flex;
 
-}
-.header-menu_item {
-    list-style-type: none;
-    color: #000000;
-    font-family: "Open Sans Semi Bold", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 18px 7px;
-    border-radius: 10px;
-    margin: 0 30px;
-}
-.header-menu_item:hover{
-    background-color: #ff5480;
-    color: #f9f9fb;
-}
-@media screen and (max-width: 992px){
-    .header {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .search-block {
-        align-self: flex-end;
-        padding-right: 5%;
-    }
-}
+// }
+// .header-menu_item {
+//     list-style-type: none;
+//     color: #000000;
+//     font-family: "Open Sans Semi Bold", sans-serif;
+//     font-size: 16px;
+//     font-weight: 600;
+//     padding: 18px 7px;
+//     border-radius: 10px;
+//     margin: 0 30px;
+// }
+// .header-menu_item:hover{
+//     background-color: #ff5480;
+//     color: #f9f9fb;
+// }
+// @media screen and (max-width: 992px){
+//     .header {
+//         margin: 0 auto;
+//         display: flex;
+//         flex-direction: column;
+//     }
+//     .search-block {
+//         align-self: flex-end;
+//         padding-right: 5%;
+//     }
+// }
 
 
