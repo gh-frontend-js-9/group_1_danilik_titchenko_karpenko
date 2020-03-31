@@ -1,9 +1,5 @@
 /* Fonts */
-@font-face {
-    font-family: "Pitcher Regular";
-    src: url("../assets/fonts/pitcher/PitcherRegular.ttf");
-}
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import "./typography";
 
 /* Variables */
 @import "./variables.scss";
