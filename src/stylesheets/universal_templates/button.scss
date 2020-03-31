@@ -39,7 +39,7 @@
 			@include logo_general;
 		}
 		&-main {
-			color: #000000;
+			color: $bg-white;
 			@include logo_general;
 		}
 	}
