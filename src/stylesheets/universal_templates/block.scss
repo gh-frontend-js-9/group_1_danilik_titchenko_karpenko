@@ -25,9 +25,18 @@
 	&__header_wrapper{
 		padding: 0 $header-body-indent;
 		background: $bg-blue;
+
+		@media screen and (max-width: 768px) {
+			padding: 0 2%;
+			background: transparent;
+		}
 	}
 	&__body{
 		padding: 0 $header-body-indent;
 		background: $bg-gray;
+
+		@media screen and (max-width: 768px) {
+			padding: 0 2%;
+		}
 	}
 }
