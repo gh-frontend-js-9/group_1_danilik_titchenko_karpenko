@@ -1,6 +1,5 @@
 import React from 'react';
 import SiteLogo, { } from '../universal_templates/buttons/site_logo';
-import { faFacebook, faTwitter, faInstagram, faVk, faPinterest } from '@fortawesome/free-brands-svg-icons';
 // import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SocialIconGray } from '../universal_templates/buttons/social_icons';
 import './Footer.scss';
