@@ -4,19 +4,16 @@ import ArticleImageBlock from '../components/professional_blog/reading_list';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import HeaderCarousel from '../components/professional_blog/header_carousel';
-import Section from '../components/universal_templates/blocks/section';
 
 export default function () {
     return (
         <>
-            <Section>
-                <Header></Header>
-                <HeaderCarousel/>
-            </Section>
-            <Section className = "block__body">
+            <Header />
+            <HeaderCarousel/>
+            <div className = "block__body">
                 <ArticleBlock />
                 <ArticleImageBlock />
-            </Section>
+            </div>
             <Footer />
         </>
     )
