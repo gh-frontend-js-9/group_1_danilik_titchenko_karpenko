@@ -225,6 +225,9 @@ $arrow-size: 10px;
 		// text-align: center;
 		left: 0;
 		width: 100%;
+		@media (max-width: 768px) {
+			text-align: center;
+		}
 		.dot {
 			-webkit-transition: opacity 0.25s ease-in;
 			-moz-transition: opacity 0.25s ease-in;
