@@ -48,6 +48,7 @@ export default function () {
                     nav_links_data.map((value, index) => {
                         return (
                             <NavLink 
+                                key = {index}
                                 className = "list__element list__element-base"
                                 href={value.href}>
                                     {value.text}
