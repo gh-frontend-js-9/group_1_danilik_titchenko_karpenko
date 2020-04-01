@@ -13,7 +13,7 @@ export default function GeneralLinkElement (
             <Link
                 to={props.href}
                 style={props.style}
-                className={`${props.className}`}>
+                className={props.className}>
                 {props.children}
             </Link>
         </div>
