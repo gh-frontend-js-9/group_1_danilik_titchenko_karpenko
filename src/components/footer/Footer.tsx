@@ -1,9 +1,10 @@
 import React from 'react';
-import SiteLogo, { }  from '../universal_templates/buttons/site_logo';
+import SiteLogo, { } from '../universal_templates/buttons/site_logo';
 import { faFacebook, faTwitter, faInstagram, faVk, faPinterest } from '@fortawesome/free-brands-svg-icons';
 // import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SocialIconGray } from '../universal_templates/buttons/social_icons';
 import './Footer.scss';
+import { social_links_data } from '../data';
 
 
 
@@ -11,11 +12,17 @@ export default () => (
     <footer className="footer">
         <SiteLogo color="gray"></SiteLogo>
         <div className="footer-social-block">
-            <SocialIconGray icon={ faFacebook }></SocialIconGray>
-            <SocialIconGray icon={ faTwitter }></SocialIconGray>
-            <SocialIconGray icon={ faInstagram }></SocialIconGray>
-            <SocialIconGray icon={ faVk }></SocialIconGray>
-            <SocialIconGray icon={ faPinterest }></SocialIconGray>
+            {
+                social_links_data.map((value, index) => {
+                    return (
+                        <SocialIconGray
+                            key={index}
+                            icon={value.icon}
+                            href={value.href}
+                        />
+                    )
+                })
+            }
         </div>
         <div className="footer-copyright">
             <p className="footer-copyright__text">All Rights Reserved 2018 BehindMars</p>

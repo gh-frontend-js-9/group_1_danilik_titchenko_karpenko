@@ -7,15 +7,21 @@
     padding: 0 0 0 $header-body-indent;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    @media screen and (max-width: 992px){
+
+    @media screen and (max-width: 768px){
         margin: 0 auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        padding: 0 0 0 5%;
+
+        &-social-block{
+            display: none;
+        }
     }
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 300px){
         margin: 0 auto;
         display: flex;
         flex-direction: column;
