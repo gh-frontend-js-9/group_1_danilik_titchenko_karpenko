@@ -1,0 +1,37 @@
+.list {
+	&_inline {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	&__element {
+		font-size: $font-size-subheader;
+		&_burger {
+			z-index: 999;
+		}
+		&-gift {
+			&:before {
+				font-family: "Font Awesome\ 5 Free", fontawesome !important;
+				content: "\f06b";
+				font-weight: 900;
+				width: 1em !important;
+				height: 1em !important;
+				background-size: contain;
+				background-repeat: no-repeat;
+				padding: 0 0.5rem;
+			}
+		}
+
+		&-base {
+			padding: 1rem 0;
+			margin: 0.25rem auto;
+			text-decoration: none;
+			text-transform: none;
+			color: $text-gray;
+			line-height: 2;
+			&:hover, &:focus{
+				color: $bg-pink;
+			}
+		}
+	}
+}
