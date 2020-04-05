@@ -9,6 +9,29 @@
 		&_burger {
 			z-index: 999;
 		}
+		&_header{
+			margin: auto 1.5rem;
+			padding: .75rem .5rem;
+			text-decoration: none;
+			text-transform: none;
+			color: #000000;
+			font-size: 16px;
+			font-weight: 600;
+
+			&:hover, &:focus{
+				// color: $bg-pink;
+				background: $bg-pink;
+				color: #ffffff;
+				border-radius: 1rem;
+			}
+			
+			&-responsive{
+				display: none;
+				@media (max-width: 768px) {
+					display: flex;
+				}
+			}
+		}
 		&-gift {
 			&:before {
 				font-family: "Font Awesome\ 5 Free", fontawesome !important;

@@ -68,7 +68,9 @@ export function ArticlesTitle(props: {
 }
 
 export function ArticleCards(props: {
-    data: PostType
+    data: PostType,
+    className?: string,
+    children?: any
 }) {
     return (
         <>
@@ -76,7 +78,11 @@ export function ArticleCards(props: {
                 props.data.docs.map((article, index) => {
                     if (index > 0) {
                         return (
-                            <Wrapper key={index}>
+                            <Wrapper 
+                                className = {
+                                    props.className ? `${props.className} card_popular__article` : "card_popular__article"
+                                }
+                                key={index}>
                                 <ListWrapper key={article._id}>
                                     <Card className="card_shadow">
                                         <Header>

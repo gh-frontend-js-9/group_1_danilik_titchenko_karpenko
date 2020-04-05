@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function () {
     const nav_button_ref: RefObject<HTMLButtonElement> = createRef();
     return (
-        <header className="header">
+        <header className="header header_background-violet">
             <div className="header-social-block">
                 {
                     social_links_data.map((value, index) => {

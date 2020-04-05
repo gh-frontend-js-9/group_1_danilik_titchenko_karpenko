@@ -2,25 +2,36 @@
 @import "../../stylesheets/variables";
 
 .header {
-    background-color: $bg-blue; //Optional style. You must delete when you want to deploy on server
     padding: 0 0 0 $header-body-indent;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    &_background {
+        &-violet {
+            background-color: $bg-blue; //Optional style. You must delete when you want to deploy on server
+        }
+        &-white {
+            background-color: #ffffff;
+        }
+    }
 
-    @media screen and (max-width: 768px){
+    &_nav{
+        margin: auto auto auto 4rem;
+    }
+
+    @media screen and (max-width: 768px) {
         margin: 0 auto;
         display: flex;
         flex-direction: row;
         padding: 0 0 0 5%;
 
-        &-social-block{
+        &-social-block {
             display: none;
         }
     }
-    @media screen and (max-width: 300px){
+    @media screen and (max-width: 300px) {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -38,7 +49,7 @@
 .search-block {
     margin: 20px;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 992px) {
         align-self: flex-end;
         padding-right: 5%;
     }

@@ -2,10 +2,10 @@
 	letter-spacing: 0.16px;
 	line-height: 1.5;
 	text-align: left;
-	&:first-child{
+	&:first-child {
 		margin: auto 0 0 0;
 	}
-	&:last-child{
+	&:last-child {
 		margin: 0;
 	}
 	margin: auto 0;
@@ -22,10 +22,10 @@
 	&:nth-child(even) {
 		margin: $margin 0 0 0;
 	}
-	&:first-child{
+	&:first-child {
 		margin: $margin 0 0 0;
 	}
-	&:last-child{
+	&:last-child {
 		margin: $margin 0 0 $margin;
 	}
 	@media (max-width: 768px) {
@@ -48,14 +48,44 @@
 }
 
 .card {
-	&_header-carousel{
-		margin: 0;
-		padding: 15rem 1rem;
-		border-radius: 0;
-		@media (max-width: 920px) {
-			padding: 10rem .75rem;
+	&_header {
+		// reading list in popular page
+		margin: auto 1rem !important;
+		&-carousel {
+			margin: 0;
+			padding: 15rem 1rem;
+			border-radius: 0;
+			@media (max-width: 920px) {
+				padding: 10rem 0.75rem;
+			}
 		}
 	}
+
+	&_popular {
+		&__article {
+			background: #ffffff;
+		}
+		// grid block wrapper
+		&__wrapper{
+			margin: 1rem 0;
+		}
+
+		$margin: 12px;
+
+		padding: 32px;
+		margin: $margin $margin 0 0;
+		border-radius: 8px;
+		&:nth-child(even) {
+			margin: 0;
+		}
+		&:first-child {
+			margin: 0;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+
 	@include card_main;
 	&_bg {
 		&-blue {
@@ -93,14 +123,14 @@
 		border-radius: $border-radius;
 		background: transparent;
 		width: fit-content;
-		-webkit-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
-		box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
 		&_tag {
 			@include box-shadow;
 			background: transparent;
 			width: 100%;
 			border-radius: $border-radius;
+			-webkit-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
+			box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.75);
 		}
 	}
 	&__title {

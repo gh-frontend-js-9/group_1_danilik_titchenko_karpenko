@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export type SiteLogoProps = {
     size?: string,
-    color?: string
+    color?: string // gray, main, black
 }
 
 function checkTextColor(color: string){
@@ -12,6 +12,8 @@ function checkTextColor(color: string){
             return "button_logo-gray"
         case "main":
             return "button_logo-main"
+        case "black":
+            return "button_logo-black"
         default:
             return "button_logo-main"
     }
