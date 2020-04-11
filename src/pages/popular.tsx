@@ -9,14 +9,16 @@ import SubmitForm from "../components/popular/subscribe_form";
 export default function () {
     return (
         <>
-            <div>
-                <NavHeader/>
-                <HeaderReadingList/>
+            <NavHeader />
+            <HeaderReadingList className="header_indent" />
+            <div className="block__body">
+                <div>
+                    <PopularArticles />
+                    <ReadingList />
+                    <SubmitForm />
+                </div>
+                <Footer />
             </div>
-            <PopularArticles/>
-            <ReadingList/>
-            <SubmitForm/>
-            <Footer/>
         </>
     )
 }

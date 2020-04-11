@@ -21,7 +21,7 @@
     &_flex {
         display: flex;
         flex: auto;
-        margin: auto;
+        // margin: auto;
         &_row {
             flex-flow: row wrap;
             @media (max-width: 920px) {
@@ -30,6 +30,9 @@
         }
         &_column {
             flex-flow: column nowrap;
+        }
+        &_nowrap{
+            flex-wrap: nowrap;
         }
         &_justify-content {
             &-around {

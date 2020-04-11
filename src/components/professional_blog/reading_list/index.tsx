@@ -5,7 +5,7 @@ import ReadingListCarousel from './list';
 export default function () {
     return (
         <>
-            <ReadingListCarousel></ReadingListCarousel>
+            <ReadingListCarousel indent></ReadingListCarousel>
             <ArticleBlock></ArticleBlock>
         </>
     )

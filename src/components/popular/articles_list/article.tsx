@@ -15,7 +15,7 @@ export default function ArticleCards(props: {
                 props.data.docs.map((article, index) => {
                     if (index > 0) {
                         return (
-                            <div className = "card__grid-wrapper card__grid-wrapper card__grid-wrapper_two card_popular__wrapper">
+                            <div key = {index} className = "card__grid-wrapper card__grid-wrapper card__grid-wrapper_two card_popular__wrapper">
                                 <Wrapper
                                     className={
                                         props.className ? `${props.className} card_popular__article` : "card_popular__article"
