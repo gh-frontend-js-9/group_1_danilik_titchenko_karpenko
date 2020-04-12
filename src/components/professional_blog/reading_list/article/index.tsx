@@ -5,9 +5,9 @@ import { defaultStateValue } from '../../article_block/article_section';
 import ArticleLayoutPhoto from './article';
 import { randomInteger } from '../../../utils/number';
 
-export function randomCategory():ArticlesCategory{
-    let random_number:number = randomInteger(0, Object.keys(ArticlesCategory).length/3);
-    switch(random_number){
+export function randomCategory(): ArticlesCategory {
+    let random_number: number = randomInteger(0, Object.keys(ArticlesCategory).length / 3);
+    switch (random_number) {
         case 0:
             return ArticlesCategory.FREELANCE;
         case 1:
@@ -19,10 +19,17 @@ export function randomCategory():ArticlesCategory{
     }
 }
 
-export default class extends Component<{}, {
+type ArticleListPropsType = {
+    className?: string,
+    limit?: number,
+    description?: boolean,
+    row?: boolean
+}
+
+export default class extends Component<ArticleListPropsType, {
     data: PostType
 }> {
-    constructor(props: PostType) {
+    constructor(props: ArticleListPropsType) {
         super(props);
 
         this.state = {
@@ -47,7 +54,18 @@ export default class extends Component<{}, {
         let { data } = this.state;
         if (data) {
             return (
-                <ArticleLayoutPhoto limit = {2} data={data} />
+                <article className={this.props.className || ""}>
+                    <ArticleLayoutPhoto
+                        row = {
+                            this.props.row? true : false
+                        }
+                        limit={this.props.limit}
+                        data={data}
+                        description={
+                            this.props.description ? true : false
+                        }
+                    />
+                </article>
             )
         } else {
             return <div></div>

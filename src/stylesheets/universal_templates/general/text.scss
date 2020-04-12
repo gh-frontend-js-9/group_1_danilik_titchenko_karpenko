@@ -35,4 +35,10 @@
             font-size: $font-size-large;
         }
     }
+    &_symbol{
+        &-dash{
+            content: "—";
+            cursor: default;
+        }
+    }
 }

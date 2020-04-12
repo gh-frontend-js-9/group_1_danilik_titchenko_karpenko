@@ -3,6 +3,7 @@ import { ArticleType, defaultStateValue } from '../../professional_blog/article_
 import { get_articles_proffessional_blog, ArticlesCategory } from '../../utils/api_utils/articles';
 import Section from '../../universal_templates/blocks/section';
 import ArticleBlockPopularPage from './article';
+import ArticleListHeader from './header';
 
 export default class extends Component<{}, ArticleType>{
     constructor(props: {}) {
@@ -25,8 +26,11 @@ export default class extends Component<{}, ArticleType>{
 
     render() {
         return (
-            <Section className="card__grid-wrapper_two card__grid">
-                <ArticleBlockPopularPage data = {this.state.data}/>
+            <Section indent>
+                <ArticleListHeader />
+                <div className="card__grid-wrapper_two card__grid">
+                    <ArticleBlockPopularPage data={this.state.data} />
+                </div>
             </Section>
         )
     }

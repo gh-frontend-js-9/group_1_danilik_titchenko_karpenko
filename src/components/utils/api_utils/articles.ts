@@ -1,12 +1,14 @@
 import Fetcher, { FETCHER_MODE } from "../Fetcher";
+import { randomInteger } from '../number';
 
 // professional blog
 // POPULAR
 export enum ArticlesCategory {
-    POPULAR, ESSENTIALS, FREELANCE
+    POPULAR, ESSENTIALS, FREELANCE, RANDOM
 }
 export async function get_articles_proffessional_blog(category: ArticlesCategory) {
-    let out_category:string = "";
+    let out_category: string = "";
+    let all_categories: string[] = ['popular', 'essentials', 'freelance'];
     switch (category) {
         case ArticlesCategory.POPULAR:
             out_category = "popular";
@@ -16,6 +18,9 @@ export async function get_articles_proffessional_blog(category: ArticlesCategory
             break;
         case ArticlesCategory.FREELANCE:
             out_category = "freelance";
+            break;
+        case ArticlesCategory.RANDOM:
+            out_category = all_categories[randomInteger(0, all_categories.length)];
             break;
         default:
             out_category = "popular";

@@ -6,7 +6,7 @@ export default function () {
     return (
         <>
             <ReadingListCarousel indent></ReadingListCarousel>
-            <ArticleBlock></ArticleBlock>
+            <ArticleBlock description limit = {2}></ArticleBlock>
         </>
     )
 }

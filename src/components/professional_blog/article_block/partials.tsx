@@ -10,7 +10,7 @@ export function PopularCard(props: {
     className?: string
 }) {
     const class_name: string = "card_shadow card_bg-blue card__flex-wrapper_column card__flex-wrapper_column-around card__flex-wrapper text_color-white";
-    if(props.data){
+    if (props.data) {
         return (
             <>
                 {
@@ -35,14 +35,16 @@ export function PopularCard(props: {
                 }
             </>
         )
-    }else{
+    } else {
         return <div></div>
     }
 }
 
 export function ArticlesTitle(props: {
     data: PostType,
-    href?: string
+    href?: string,
+    children?: React.ReactNode,
+    random?: boolean
 }) {
     return (
         <>
@@ -51,9 +53,16 @@ export function ArticlesTitle(props: {
                     if (index === 0) {
                         return (
                             <Wrapper key={index} className="card__flex-wrapper_row card__flex-wrapper">
-                                <Title>{article.category[0]}</Title>
+                                <Title>
+                                    {
+                                        props.random? "Random" : article.category[0]
+                                    }
+                                </Title>
+                                {
+                                    props.children ? props.children : null
+                                }
                                 <ViewAllButton href={
-                                    props.href? props.href : "#"
+                                    props.href ? props.href : "#"
                                 } />
                             </Wrapper>
                         )
@@ -78,8 +87,8 @@ export function ArticleCards(props: {
                 props.data.docs.map((article, index) => {
                     if (index > 0) {
                         return (
-                            <Wrapper 
-                                className = {
+                            <Wrapper
+                                className={
                                     props.className ? `${props.className} card_popular__article` : "card_popular__article"
                                 }
                                 key={index}>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ArticleCard from './article';
 import { PostType } from './types';
 import { get_articles_proffessional_blog, ArticlesCategory } from '../../utils/api_utils/articles';
@@ -8,7 +8,10 @@ export type ArticleType = {
 }
 
 export type ArticlePropsType = {
-    category: ArticlesCategory
+    category: ArticlesCategory,
+    title?: boolean,
+    random?: boolean
+    wide?: boolean
 }
 
 export const defaultStateValue: PostType = {
@@ -43,7 +46,17 @@ export class ArticleBlock extends Component<ArticlePropsType, ArticleType>{
         const { data } = this.state;
         if (data) {
             return (
-                <ArticleCard data={data}></ArticleCard>
+                <ArticleCard
+                    title={
+                        this.props.title ? true : false
+                    }
+                    random={
+                        this.props.random ? true : false
+                    }
+                    wide = {
+                        this.props.wide? true : false
+                    }
+                    data={data} />
             )
         } else {
             return (

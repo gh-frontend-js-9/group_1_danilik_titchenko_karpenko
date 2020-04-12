@@ -31,7 +31,7 @@
         &_column {
             flex-flow: column nowrap;
         }
-        &_nowrap{
+        &_nowrap {
             flex-wrap: nowrap;
         }
         &_justify-content {
@@ -47,7 +47,9 @@
             &-end {
                 justify-content: end;
             }
+            &-start {
+                justify-content: start;
+            }
         }
     }
 }
-

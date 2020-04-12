@@ -6,17 +6,38 @@ import { PostDocsType, PostType } from './types';
 import { PopularCard, ArticlesTitle, ArticleCards } from './partials';
 
 export default function (props: {
-    data: PostType
+    data: PostType,
+    title?: boolean,
+    random?: boolean,
+    wide?: boolean
 }) {
     props.data.docs.sort((a: PostDocsType, b: PostDocsType) => {
         return a.viewsCount + b.viewsCount
     })
     return (
         <BlockWrapper indent>
-            <ArticlesTitle data={props.data}></ArticlesTitle>
-            <Wrapper className="card__grid-wrapper_two">
+            {
+                props.title ? (
+                    <ArticlesTitle
+                        random={
+                            props.random ? true : false
+                        }
+                        data={props.data} />
+                ) : (
+                        null
+                    )
+            }
+            <Wrapper 
+                className={
+                    props.wide? "card__grid-wrapper_two_ratio_60-40" : "card__grid-wrapper_two"
+                }
+            >
                 <PopularCard data={props.data} />
-                <Wrapper className="card__grid-wrapper_four">
+                <Wrapper 
+                    className={
+                        props.wide? "card__grid-wrapper_one" : "card__grid-wrapper_four"
+                    }
+                >
                     <ArticleCards data={props.data}></ArticleCards>
                 </Wrapper>
             </Wrapper>
