@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import NavHeader from '../components/header/NavHeader';
-import Footer from '../components/footer/Footer';
-import ReadingList from '../components/professional_blog/reading_list/list';
-import HeaderReadingList from '../components/popular/reading_list';
-import PopularArticles from '../components/popular/articles_list';
-import SubmitForm from "../components/popular/subscribe_form";
+import ReadingList from '../components/pages_components/professional_blog/reading_list/list';
+import HeaderReadingList from '../components/pages_components/popular/reading_list';
+import PopularArticles from '../components/pages_components/popular/articles_list';
+import SubmitForm from "../components/pages_components/popular/subscribe_form";
 import BlockBody from '../components/universal_templates/blocks/body';
+import Footer from '../components/pages_components/footer/Footer';
+import NavHeader from '../components/pages_components/header/NavHeader';
 
 export default function () {
     useEffect(() => {
