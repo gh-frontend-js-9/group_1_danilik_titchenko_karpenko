@@ -21,7 +21,7 @@ export function ArticleBlock(props: {
                 }
                 {
                     props.data.author?
-                        <Author>By {props.data.author} in {props.data.tags[0]}</Author>:
+                        <Author>By {props.data.author.firstName} {props.data.author.lastName} in {props.data.tags[0]}</Author>:
                         null
                 }
                 {

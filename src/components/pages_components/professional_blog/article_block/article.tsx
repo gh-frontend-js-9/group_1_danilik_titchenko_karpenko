@@ -27,15 +27,15 @@ export default function (props: {
                         null
                     )
             }
-            <Wrapper 
+            <Wrapper
                 className={
-                    props.wide? "card__grid-wrapper_two_ratio_60-40" : "card__grid-wrapper_two"
+                    props.wide ? "card__grid-wrapper_two_ratio_60-40" : "card__grid-wrapper_two"
                 }
             >
                 <PopularCard data={props.data} />
-                <Wrapper 
+                <Wrapper
                     className={
-                        props.wide? "card__grid-wrapper_one" : "card__grid-wrapper_four"
+                        props.wide ? "card__grid-wrapper_one" : "card__grid-wrapper_four"
                     }
                 >
                     <ArticleCards data={props.data}></ArticleCards>

@@ -21,7 +21,7 @@ export function PopularCard(props: {
                                     props.className ? `${class_name} ${props.className}` : class_name
                                 }>
                                     <ListWrapper key={article._id}>
-                                        <Author>By {article.author} in {article.tags[0]}</Author>
+                                        <Author>By {article.author.firstName} in {article.tags[0]}</Author>
                                         <Title>{article.title}</Title>
                                         <Body>{article.description}</Body>
                                     </ListWrapper>

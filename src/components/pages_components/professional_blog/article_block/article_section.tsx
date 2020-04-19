@@ -38,6 +38,7 @@ export class ArticleBlock extends Component<ArticlePropsType, ArticleType>{
                 this.setState({
                     data: articles.data
                 })
+                console.log(articles.data);
             }
         })
     }
