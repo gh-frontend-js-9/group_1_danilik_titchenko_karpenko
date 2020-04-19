@@ -1,0 +1,14 @@
+.margin{
+    &-x{
+        &-auto{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &-y{
+        &-auto{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+}
