@@ -10,7 +10,7 @@ export default function NavigationPreloadManager() {
     return (
         <BrowserRouter>
             <Switch key="switch">
-                <Route key="root path" exact path="/" component={ProfessionalBlog} />
+                <Route  key="root path" exact path="/" component={ProfessionalBlog} />
                 <Route key="popular" path="/popular" component={Popular} />
                 <Route key="business" path="/business" component={BusinessBlog} />
                 <Route key="personal" path="/personal" component={PersonalBLog} />

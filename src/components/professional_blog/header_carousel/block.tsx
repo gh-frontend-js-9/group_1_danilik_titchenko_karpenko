@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import { PostType } from '../article_block/types';
-import { get_articles_proffessional_blog, ArticlesCategory } from '../../utils/api_utils/articles';
+import { ArticlesCategory } from '../../utils/api_utils/articles';
 import { PopularCard } from '../article_block/partials';
-import { ArticlePropsType, ArticleType } from '../article_block/article_section';
+import { ArticlePropsType } from '../article_block/article_section';
+import { useSelector } from 'react-redux';
 
 
 export const defaultStateValue: PostType = {
@@ -14,36 +15,51 @@ export const defaultStateValue: PostType = {
     total: 0
 }
 
-export default class ArticleBlock extends Component<ArticlePropsType,ArticleType>{
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            data: defaultStateValue
+function Block(props: {
+    data: PostType
+}) {
+    return (
+        props.data.docs !== undefined? (
+            <PopularCard className="card_header-carousel" data={props.data} />
+        ): <div></div>
+    )
+}
+
+export default function (props: ArticlePropsType) {
+    let essentials: PostType = useSelector((state: any) => state.essentialsPosts);
+    let popular: PostType = useSelector((state: any) => state.popularPosts);
+    let freelance: PostType = useSelector((state: any) => state.freelancePosts);
+
+    if (
+        essentials !== undefined &&
+        popular !== undefined &&
+        freelance !== undefined
+    ) {
+        switch (props.category) {
+            case ArticlesCategory.ESSENTIALS:
+                return (
+                    <Block
+                        data={essentials}
+                    />
+                )
+            case ArticlesCategory.FREELANCE:
+                return (
+                    <Block
+                        data={freelance}
+                    />
+                )
+            case ArticlesCategory.POPULAR:
+                return (
+                    <Block
+                        data={popular}
+                    />
+                )
+            default:
+                return (
+                    <Block data = {popular}/>
+                )
         }
-        this.getArticles(ArticlesCategory.ESSENTIALS);
-    }
-
-
-    getArticles(category: ArticlesCategory) {
-        get_articles_proffessional_blog(category).then((articles) => {
-            if (articles) {
-                this.setState({
-                    data: articles.data
-                })
-            }
-        })
-    }
-
-    render() {
-        const { data } = this.state;
-        if (data) {
-            return (
-                <PopularCard className = "card_header-carousel" data = {data}/>
-            )
-        } else {
-            return (
-                <div></div>
-            )
-        }
+    } else {
+        return <div></div>
     }
 }

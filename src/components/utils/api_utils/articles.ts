@@ -1,5 +1,6 @@
 import Fetcher, { FETCHER_MODE } from "../Fetcher";
 import { randomInteger } from '../number';
+import { useSelector } from "react-redux";
 
 // professional blog
 // POPULAR

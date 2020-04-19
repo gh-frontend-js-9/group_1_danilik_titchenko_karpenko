@@ -6,9 +6,9 @@ import { ArticlesCategory } from '../../../components/utils/api_utils/articles';
 export default function () {
     return (
         <Section>
-            <ArticleBlock category={ArticlesCategory.POPULAR}></ArticleBlock>
-            <ArticleBlock category={ArticlesCategory.ESSENTIALS}></ArticleBlock>
-            <ArticleBlock category={ArticlesCategory.FREELANCE}></ArticleBlock>
+            <ArticleBlock title category={ArticlesCategory.POPULAR}></ArticleBlock>
+            <ArticleBlock title category={ArticlesCategory.ESSENTIALS}></ArticleBlock>
+            <ArticleBlock title category={ArticlesCategory.FREELANCE}></ArticleBlock>
         </Section>
     )
 }

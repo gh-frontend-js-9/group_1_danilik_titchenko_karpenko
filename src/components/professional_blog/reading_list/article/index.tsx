@@ -1,23 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { PostType } from '../../article_block/types';
-import { get_articles_proffessional_blog, ArticlesCategory } from '../../../utils/api_utils/articles';
-import { defaultStateValue } from '../../article_block/article_section';
 import ArticleLayoutPhoto from './article';
+import { useSelector } from 'react-redux';
 import { randomInteger } from '../../../utils/number';
-
-export function randomCategory(): ArticlesCategory {
-    let random_number: number = randomInteger(0, Object.keys(ArticlesCategory).length / 3);
-    switch (random_number) {
-        case 0:
-            return ArticlesCategory.FREELANCE;
-        case 1:
-            return ArticlesCategory.ESSENTIALS;
-        case 2:
-            return ArticlesCategory.POPULAR
-        default:
-            return ArticlesCategory.FREELANCE
-    }
-}
 
 type ArticleListPropsType = {
     className?: string,
@@ -26,49 +11,41 @@ type ArticleListPropsType = {
     row?: boolean
 }
 
-export default class extends Component<ArticleListPropsType, {
-    data: PostType
-}> {
-    constructor(props: ArticleListPropsType) {
-        super(props);
+export default function (props: ArticleListPropsType) {
+    let essentials: PostType = useSelector((state: any) => state.essentialsPosts);
+    let popular: PostType = useSelector((state: any) => state.popularPosts);
+    let freelance: PostType = useSelector((state: any) => state.freelancePosts);
 
-        this.state = {
-            data: defaultStateValue
-        };
-        this.getArticles(randomCategory());
-    }
+    let category_array: PostType[] = [essentials, popular, freelance];
 
-
-
-    getArticles(category: ArticlesCategory) {
-        get_articles_proffessional_blog(category).then((articles) => {
-            if (articles) {
-                this.setState({
-                    data: articles.data
-                })
-            }
-        })
-    }
-
-    render() {
-        let { data } = this.state;
-        if (data) {
-            return (
-                <article className={this.props.className || ""}>
-                    <ArticleLayoutPhoto
-                        row = {
-                            this.props.row? true : false
-                        }
-                        limit={this.props.limit}
-                        data={data}
-                        description={
-                            this.props.description ? true : false
-                        }
-                    />
-                </article>
-            )
-        } else {
-            return <div></div>
+    function get_random_category(){
+        switch(randomInteger(0, category_array.length)){
+            case 0:
+                return essentials;
+            case 1:
+                return popular;
+            case 2:
+                return freelance;
+            default:
+                return freelance;
         }
     }
+
+    let data = get_random_category();
+    return (
+        data.docs !== undefined ? (
+            <article className={props.className || ""}>
+                <ArticleLayoutPhoto
+                    row={
+                        props.row ? true : false
+                    }
+                    limit={props.limit}
+                    data={data}
+                    description={
+                        props.description ? true : false
+                    }
+                />
+            </article>
+        ): <div></div>
+    )
 }

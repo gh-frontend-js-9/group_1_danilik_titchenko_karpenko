@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ArticleCard from './article';
 import { PostType } from './types';
-import { get_articles_proffessional_blog, ArticlesCategory } from '../../utils/api_utils/articles';
+import { ArticlesCategory } from '../../utils/api_utils/articles';
+import { useSelector } from 'react-redux';
 
 export type ArticleType = {
     data: PostType
@@ -22,46 +23,72 @@ export const defaultStateValue: PostType = {
     total: 0
 }
 
-export class ArticleBlock extends Component<ArticlePropsType, ArticleType>{
-    constructor(props: ArticlePropsType) {
-        super(props);
-        this.state = {
-            data: defaultStateValue
-        }
-        this.getArticles(props.category);
+function Block(props: {
+    data: PostType,
+    properties?: {
+        random?: boolean,
+        title?: boolean,
+        wide?: boolean
     }
+}) {
+    return (
+        props.data.docs !== undefined ? (
+            <ArticleCard
+                title={
+                    props.properties?.title ? true : false
+                }
+                random={
+                    props.properties?.random ? true : false
+                }
+                wide={
+                    props.properties?.wide ? true : false
+                }
+                data={props.data}
+            />
+        ) : <div></div>
+    )
+}
 
+export function ArticleBlock(props: ArticlePropsType) {
+    let essentials: PostType = useSelector((state: any) => state.essentialsPosts);
+    let popular: PostType = useSelector((state: any) => state.popularPosts);
+    let freelance: PostType = useSelector((state: any) => state.freelancePosts);
 
-    getArticles(category: ArticlesCategory) {
-        get_articles_proffessional_blog(category).then((articles) => {
-            if (articles) {
-                this.setState({
-                    data: articles.data
-                })
-            }
-        })
-    }
-
-    render() {
-        const { data } = this.state;
-        if (data) {
-            return (
-                <ArticleCard
-                    title={
-                        this.props.title ? true : false
-                    }
-                    random={
-                        this.props.random ? true : false
-                    }
-                    wide = {
-                        this.props.wide? true : false
-                    }
-                    data={data} />
-            )
-        } else {
-            return (
-                <div></div>
-            )
+    if (
+        essentials !== undefined &&
+        popular !== undefined &&
+        freelance !== undefined
+    ) {
+        switch (props.category) {
+            case ArticlesCategory.ESSENTIALS:
+                return (
+                    <Block
+                        data={essentials}
+                        properties={props}
+                    />
+                )
+            case ArticlesCategory.FREELANCE:
+                return (
+                    <Block
+                        data={freelance}
+                        properties={props}
+                    />
+                )
+            case ArticlesCategory.POPULAR:
+                return (
+                    <Block
+                        data={popular}
+                        properties={props}
+                    />
+                )
+            default:
+                return (
+                    <Block data={popular}
+                        properties={props}
+                    />
+                )
         }
+    } else {
+        return <div></div>
     }
 }
