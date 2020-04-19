@@ -18,7 +18,7 @@ export default class ArticleBlock extends Component<ArticlePropsType,ArticleType
         this.state = {
             data: defaultStateValue
         }
-        this.getArticles(ArticlesCategory.ESSENTIALS);
+        this.getArticles(this.props.category);
     }
 
 
