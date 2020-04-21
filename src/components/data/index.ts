@@ -6,23 +6,23 @@ export const social_links_data: Array<{
 }> = [
     {
         icon: faVk,
-        href: "#"
+        href: "https:/vk.com"
     },
     {
         icon: faPinterest,
-        href: "#"
+        href: "https://www.pinterest.com"
     },
     {
         icon: faInstagram,
-        href: "#"
+        href: "https://www.instagram.com"
     },
     {
         icon: faTwitter,
-        href: "#"
+        href: "https://twitter.com"
     },
     {
         icon: faFacebook,
-        href: "#"
+        href: "https://www.facebook.com"
     },
 ]
 

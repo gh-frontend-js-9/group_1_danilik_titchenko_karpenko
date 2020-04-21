@@ -58,6 +58,9 @@
 			@media (max-width: 920px) {
 				padding: 10rem 0.75rem;
 			}
+			@media (max-width: 448px) {
+				padding: 3rem 0.75rem;
+			}	
 		}
 	}
 
@@ -105,6 +108,10 @@
 		text-transform: uppercase;
 		font-size: $font-size-subheader;
 		@include card_general;
+
+		@media screen and (max-width: 448px) {
+			font-size: 16px;
+		}
 	}
 	&__body {
 		font-size: $font-size-base;
@@ -137,6 +144,13 @@
 		font-size: $font-size-large;
 		font-weight: bold;
 		@include card_general;
+
+		@media screen and (max-width: 768px) {
+			font-size: 32px;
+		}
+		@media screen and (max-width: 448px) {
+			font-size: 24px;
+		}
 	}
 	&__grid-wrapper {
 		display: grid;
