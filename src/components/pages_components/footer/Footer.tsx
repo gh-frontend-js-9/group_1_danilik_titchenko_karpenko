@@ -3,7 +3,7 @@ import SiteLogo, { } from '../../universal_templates/buttons/site_logo';
 // import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SocialIconGray } from '../../universal_templates/buttons/social_icons';
 import './Footer.scss';
-import { social_links_data } from '../../data';
+import { social_links_data } from '../data';
 
 
 
