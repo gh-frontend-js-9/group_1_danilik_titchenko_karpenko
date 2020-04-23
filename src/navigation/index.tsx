@@ -7,6 +7,21 @@ import BusinessBlog from '../pages/business_blog';
 import PersonalBlog from '../pages/personal_blog';
 import NewPage from '../pages/new';
 import FreelanceBlog from '../pages/freelance_blog';
+import ReadingLists from '../pages/reading_lists';
+
+const blog_base_path: string = "/blog";
+const lists_base_path: string = "/lists";
+
+const path_config_data = {
+    blog: {
+        business: `${blog_base_path}/business`,
+        freelance: `${blog_base_path}/freelance`,
+        personal: `${blog_base_path}/personal`
+    },
+    lists: {
+        reading: `${lists_base_path}/reading`
+    }
+}
 
 export default function NavigationPreloadManager() {
     return (
@@ -14,10 +29,11 @@ export default function NavigationPreloadManager() {
             <Switch key="switch">
                 <Route exact path="/" component={ProfessionalBlog} />
                 <Route path="/popular" component={Popular} />
-                <Route path="/business" component={BusinessBlog} />
-                <Route path="/personal" component={PersonalBlog} />
-                <Route path="/new" component={NewPage}/>
-                <Route path="/freelance" component={FreelanceBlog}/>
+                <Route path={path_config_data.blog.business} component={BusinessBlog} />
+                <Route path={path_config_data.blog.personal} component={PersonalBlog} />
+                <Route path="/new" component={NewPage} />
+                <Route path={path_config_data.blog.freelance} component={FreelanceBlog} />
+                <Route path={path_config_data.lists.reading} component={ReadingLists} />
             </Switch>
         </BrowserRouter>
     )
