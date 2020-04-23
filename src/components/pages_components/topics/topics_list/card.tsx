@@ -12,8 +12,9 @@ export default function (props: {
                     className={`${props.data.icon_class} icon_general`} />
                 <Text type={TextType.Header} className="text_align-left margin-y-auto text_weight-bold">{props.data.title}</Text>
             </div>
-
-            <Text type={TextType.Subheader} className="text_align-center margin-y-auto">{props.data.description}</Text>
+            <div className="block_topics__description">
+                {props.data.description}
+            </div>
         </article>
     )
 }
