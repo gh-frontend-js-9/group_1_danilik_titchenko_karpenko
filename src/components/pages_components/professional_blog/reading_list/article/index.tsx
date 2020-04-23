@@ -23,7 +23,8 @@ type ArticleListPropsType = {
     className?: string,
     limit?: number,
     description?: boolean,
-    row?: boolean
+    row?: boolean,
+    category?: ArticlesCategory
 }
 
 export default class extends Component<ArticleListPropsType, {
@@ -35,7 +36,9 @@ export default class extends Component<ArticleListPropsType, {
         this.state = {
             data: defaultStateValue
         };
-        this.getArticles(randomCategory());
+        props.category? 
+            this.getArticles(props.category): 
+            this.getArticles(randomCategory())
     }
 
 
@@ -56,8 +59,8 @@ export default class extends Component<ArticleListPropsType, {
             return (
                 <article className={this.props.className || ""}>
                     <ArticleLayoutPhoto
-                        row = {
-                            this.props.row? true : false
+                        row={
+                            this.props.row ? true : false
                         }
                         limit={this.props.limit}
                         data={data}
