@@ -12,10 +12,6 @@
 .input{
     $border-radius: 16px;
     &_submit{
-        // opacity: -1;
-        -webkit-transition: all 1s ease-out 0.5s;
-        -moz-transition: all 1s ease-out 0.5s;
-        -o-transition: all 1s ease-out 0.5s;
         transition: all 1s ease-out 0.5s;
         @include input_hover(#ddd);
         @include input_general;
@@ -29,5 +25,16 @@
         width: 100%;
         border-radius: $border-radius 0 0 $border-radius;
         text-align: center;
+
+        &:focus::placeholder {
+            color: rgb(10, 5, 5);
+            transition: all 0.5s linear;
+            font-size: 18px;
+            transform: translate(-70px);
+            opacity: .8;
+
+        }
     }
+
 }
+

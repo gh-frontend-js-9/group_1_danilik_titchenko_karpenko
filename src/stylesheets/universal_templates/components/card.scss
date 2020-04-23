@@ -2,6 +2,7 @@
 	letter-spacing: 0.16px;
 	line-height: 1.5;
 	text-align: left;
+	font-family: 'Open Sans', sans-serif;
 	&:first-child {
 		margin: auto 0 0 0;
 	}
@@ -99,9 +100,9 @@
 		@include box-shadow;
 	}
 	&__header {
-		text-transform: uppercase;
 		font-size: $font-size-header;
-		font-weight: bold;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
 		@include card_general;
 	}
 	&__author {
