@@ -9,6 +9,7 @@ import NewPage from '../pages/new';
 import FreelanceBlog from '../pages/freelance_blog';
 import ReadingLists from '../pages/reading_lists';
 import Topics from '../pages/topics';
+import Author from '../pages/author';
 
 const blog_base_path: string = "/blog";
 const lists_base_path: string = "/lists";
@@ -36,6 +37,7 @@ export default function NavigationPreloadManager() {
                 <Route path={path_config_data.blog.freelance} component={FreelanceBlog} />
                 <Route path={path_config_data.lists.reading} component={ReadingLists} />
                 <Route path="/topics" component={Topics} />
+                <Route path="/author" component={Author} />
             </Switch>
         </BrowserRouter>
     )

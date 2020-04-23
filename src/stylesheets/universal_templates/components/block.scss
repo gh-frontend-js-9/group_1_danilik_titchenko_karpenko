@@ -23,24 +23,23 @@
 	}
 	&_topics {
 		display: grid;
+		grid-template-rows: auto;
 		margin: auto;
-		grid-template-columns: repeat(4, 1fr);
-		// display_flex display_flex_row display_flex_justify-content-around
-		@media (max-width:1200px) {
-			grid-template-rows: auto;
+
+		@media (min-width:1200px) {	
 			grid-template-columns: repeat(3, 1fr);
 		}
-		@media (max-width:920px) {
-			grid-template-rows: auto;
+		@media (max-width:1200px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		@media (max-width:768px) {
+		@media (max-width: 920px) {
 			grid-template-rows: auto;
 			grid-template-columns: 1fr;
 			width: fit-content;
 		}
+
 		&__description{
-			padding: 1rem 0;
+			padding: 1rem .5rem;
 			font-size: $font_size-subheader;
 			line-height: 2;
 			text-align: left;
