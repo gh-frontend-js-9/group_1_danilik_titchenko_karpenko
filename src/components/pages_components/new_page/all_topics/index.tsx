@@ -1,11 +1,10 @@
 import React from 'react';
 import data from './data';
 import { Block } from './partials';
-import Section from '../../../universal_templates/blocks/section';
 
 export default function () {
     return (
-        <Section indent className = "display_flex display_flex_row display_flex_justify-content-around">
+        <div className = "block_topics ">
             {
                 data.map((value, index) => {
                     return (
@@ -17,6 +16,6 @@ export default function () {
                     )
                 })
             }
-        </Section>
+        </div>
     )
 }

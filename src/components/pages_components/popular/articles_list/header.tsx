@@ -6,7 +6,7 @@ export type ArticleListType = Array<{
     href: string
 }>
 
-const links: ArticleListType = [
+export const links: ArticleListType = [
     {
         text: "Home",
         href: "/"
@@ -21,15 +21,17 @@ const links: ArticleListType = [
     },
 ]
 
-export default function () {
+export default function (props: {
+    links: ArticleListType
+}) {
     return (
         <ul className="display_flex display_flex_row display_flex_justify-content-start">
             {
-                links.map((value, index) => {
+                props.links.map((value, index) => {
                     return (
                         <ButtonLink
                             className={
-                                index === (links.length - 1) ? "link_section" : "link_section link_section_dash"
+                                index === (props.links.length - 1) ? "link_section" : "link_section link_section_dash"
                             }
                             key={index}
                             href={value.href}>

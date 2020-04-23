@@ -21,7 +21,6 @@
     &_flex {
         display: flex;
         flex: auto;
-        // margin: auto;
         &_row {
             flex-flow: row wrap;
             @media (max-width: 920px) {

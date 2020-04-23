@@ -1,14 +1,20 @@
-.margin{
-    &-x{
-        &-auto{
+.margin {
+    $margin_value: 1, 2;
+    &-x {
+        &-auto {
             margin-left: auto;
             margin-right: auto;
         }
     }
-    &-y{
-        &-auto{
+    &-y {
+        &-auto {
             margin-top: auto;
             margin-bottom: auto;
+        }
+    }
+    @each $i in $margin_value {
+        &-bottom-#{$i} {
+            margin-bottom: #{$i}rem !important;
         }
     }
 }
