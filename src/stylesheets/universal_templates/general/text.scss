@@ -15,6 +15,11 @@
             font-family: "Open Sans Semi Bold";
         }
     }
+    &_weight{
+        &-bold{
+            font-weight: bold;
+        }
+    }
     &_align{
         &-center{
             text-align: center;
