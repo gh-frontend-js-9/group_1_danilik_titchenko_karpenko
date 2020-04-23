@@ -40,7 +40,7 @@ export const nav_links_data: Array<{
     },
     {
         text: "Reading list",
-        href: "/list"
+        href: "/lists/reading"
     },
     {
         text: "Topics",

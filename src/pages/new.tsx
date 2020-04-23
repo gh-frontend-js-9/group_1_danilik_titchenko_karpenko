@@ -9,6 +9,7 @@ import Section from '../components/universal_templates/blocks/section';
 import ArticleListLinks from '../components/pages_components/popular/articles_list/header';
 import links from '../components/pages_components/new_page/data/article_list_header';
 import PageDescription from '../components/pages_components/new_page/PageDescription';
+import Calendar from '../components/universal_templates/calendar/Calendar';
 
 export default function () {
     return (

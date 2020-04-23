@@ -37,7 +37,7 @@ export default function NavigationPreloadManager() {
                 <Route path={path_config_data.blog.freelance} component={FreelanceBlog} />
                 <Route path={path_config_data.lists.reading} component={ReadingLists} />
                 <Route path="/topics" component={Topics} />
-                <Route path="/author" component={Author} />
+                <Route path="/subscribe" component={Author} />
             </Switch>
         </BrowserRouter>
     )
