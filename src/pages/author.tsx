@@ -9,6 +9,10 @@ import PageDescription from '../components/pages_components/new_page/PageDescrip
 import ArticleList from '../components/pages_components/reading_lists/article_list';
 import { ArticlesCategory } from '../utils/api_utils/articles';
 import SubscribeForm from '../components/pages_components/popular/subscribe_form';
+import Calendar from '../components/universal_templates/calendar/Calendar';
+import AuthorInfo from '../components/pages_components/author/author_info/index';
+
+
 
 export default function () {
     let array_articles_category: ArticlesCategory[] = [
@@ -19,7 +23,9 @@ export default function () {
     return (
         <>
             <NavHeader />
+            <div className="subscribe-wrapper">
             <Body>
+            <AuthorInfo> </AuthorInfo>
                 <Section>
                     <PageDescription
                         className="block__element_indent-dual"
@@ -41,6 +47,8 @@ export default function () {
                 </Section>
                 <SubscribeForm />
             </Body>
+            <Calendar />
+            </div>
             <Footer />
         </>
     )
