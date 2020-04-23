@@ -96,10 +96,14 @@ export function Wrapper(props: CardComponentPropsType) {
 
 export function ListWrapper(props: {
     id?: string,
-    children: any
+    children: any,
+    className?: string
 }) {
     return (
-        <div key={props.id}>
+        <div
+            className={props.className}
+            key={props.id}
+        >
             {props.children}
         </div>
     )

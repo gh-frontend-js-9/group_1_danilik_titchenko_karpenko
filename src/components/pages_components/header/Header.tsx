@@ -2,7 +2,7 @@ import React, { createRef, RefObject } from 'react';
 import SiteLogo from '../../universal_templates/buttons/site_logo';
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SocialIconWhite } from '../../universal_templates/buttons/social_icons';
-import { social_links_data, nav_links_data } from '../../data';
+import { social_links_data, nav_links_data } from '../data';
 import './Header.scss';
 import SideMenu from "../../universal_templates/menu";
 import NavLink from '../../universal_templates/buttons/link';

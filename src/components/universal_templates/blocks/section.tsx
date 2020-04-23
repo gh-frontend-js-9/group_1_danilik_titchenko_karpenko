@@ -13,6 +13,7 @@ export default function (props: {
     else {
         class_name = `${base_class}`
     }
+
     return (
         <section className={
             props.className ?

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Author, Body, Title, Wrapper, ListWrapper } from '../../../universal_templates/cards/partials';
+import { Header, Author, Body, Title, Wrapper, ListWrapper, Image } from '../../../universal_templates/cards/partials';
 import Card from '../../../universal_templates/cards';
 import ViewAllButton from './view_all_button';
 import { PostDocsType, PostType } from './types';
@@ -55,7 +55,7 @@ export function ArticlesTitle(props: {
                             <Wrapper key={index} className="card__flex-wrapper_row card__flex-wrapper">
                                 <Title>
                                     {
-                                        props.random? "Random" : article.category[0]
+                                        props.random ? "Random" : article.category[0]
                                     }
                                 </Title>
                                 {
@@ -79,7 +79,8 @@ export function ArticlesTitle(props: {
 export function ArticleCards(props: {
     data: PostType,
     className?: string,
-    children?: any
+    children?: any,
+    image?: boolean
 }) {
     return (
         <>
@@ -93,6 +94,14 @@ export function ArticleCards(props: {
                                 }
                                 key={index}>
                                 <ListWrapper key={article._id}>
+                                    {
+                                        props.image ? (
+                                            <Image
+                                                src={article.featuredImage}
+                                                alt={article.description}
+                                            />
+                                        ): null
+                                    }
                                     <Card className="card_shadow">
                                         <Header>
                                             <Link

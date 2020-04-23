@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { PostType } from '../../article_block/types';
-import { get_articles_proffessional_blog, ArticlesCategory } from '../../../../../utils/api_utils/articles';
-import { defaultStateValue } from '../../article_block/article_section';
-import ArticleLayoutPhoto from './article';
-import { randomInteger } from '../../../../../utils/number';
+import { PostType } from '../../professional_blog/article_block/types';
+import { defaultStateValue } from '../../professional_blog/article_block/article_section';
+import { ArticleCards } from './article';
+import { randomInteger } from '../../../../utils/number';
+import { ArticlesCategory, get_articles_proffessional_blog } from '../../../../utils/api_utils/articles';
 
 export function randomCategory(): ArticlesCategory {
     let random_number: number = randomInteger(0, Object.keys(ArticlesCategory).length / 3);
@@ -36,8 +36,8 @@ export default class extends Component<ArticleListPropsType, {
         this.state = {
             data: defaultStateValue
         };
-        props.category? 
-            this.getArticles(props.category): 
+        props.category ?
+            this.getArticles(props.category) :
             this.getArticles(randomCategory())
     }
 
@@ -58,15 +58,14 @@ export default class extends Component<ArticleListPropsType, {
         if (data) {
             return (
                 <article className={this.props.className || ""}>
-                    <ArticleLayoutPhoto
+                    <ArticleCards
+                        image
                         row={
                             this.props.row ? true : false
                         }
-                        limit={this.props.limit}
                         data={data}
-                        description={
-                            this.props.description ? true : false
-                        }
+                        limit={this.props.limit}
+                        description={this.props.description}
                     />
                 </article>
             )
